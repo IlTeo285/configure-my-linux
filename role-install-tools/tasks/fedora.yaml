@@ -1,4 +1,9 @@
 ---
+- name: create user wide binary path directory 
+  ansible.builtin.file:
+    path: "$HOME/.cargo"
+    state: directory
+
 - name: install packages
   become: yes
   ansible.builtin.package:
