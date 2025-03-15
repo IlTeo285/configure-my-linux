@@ -10,3 +10,6 @@
 
 # install the tools based on operational system
 - ansible.builtin.include_tasks: "{{ ansible_distribution  | lower }}.yaml"
+
+  # install the tools based on operational system
+- ansible.builtin.include_tasks: "rust.yaml"

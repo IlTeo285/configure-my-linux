@@ -1,0 +1,28 @@
+---
+- name: Install Rust using rustup
+  hosts: all
+  become: yes
+  tasks:
+    - name: Install dependencies (curl, build tools)
+      ansible.builtin.package:
+        name:
+          - curl
+          - gcc
+          - make
+        state: present
+
+    - name: Download and install Rust using rustup
+      ansible.builtin.shell:
+        cmd: curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y
+        creates: ~/.cargo/bin/rustc
+
+    - name: Add Rust to PATH
+      ansible.builtin.lineinfile:
+        path: ~/.zshrc
+        line: 'export PATH="$HOME/.cargo/bin:$PATH"'
+        create: yes
+
+    - name: Reload shell environment
+      ansible.builtin.shell:
+        cmd: source ~/.bashrc
+

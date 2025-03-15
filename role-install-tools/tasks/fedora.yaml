@@ -10,13 +10,11 @@
     state: latest
     name:
       - bat
-      - cargo
       - git
       - golang
       - htop
       - make
       - openssl
-      - rust
       - snapd
       - tree
       - neovim
