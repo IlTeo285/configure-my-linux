@@ -1,0 +1,12 @@
+---
+- name: create user wide binary path directory 
+  ansible.builtin.file:
+    path: "$HOME/.local/bin"
+    state: directory
+
+# print the operational system
+- debug:
+    msg: "os: {{ ansible_distribution }}/{{ ansible_distribution_major_version }}"
+
+# install the tools based on operational system
+- ansible.builtin.include_tasks: "{{ ansible_distribution  | lower }}.yaml"

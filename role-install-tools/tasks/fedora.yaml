@@ -1,0 +1,19 @@
+---
+- name: install packages
+  become: yes
+  ansible.builtin.package:
+    state: latest
+    name:
+      - bat
+      - cargo
+      - git
+      - golang
+      - htop
+      - make
+      - openssl
+      - rust
+      - snapd
+      - tree
+      - neovim
+      - zsh
+

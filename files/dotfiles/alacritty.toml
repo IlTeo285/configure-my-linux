@@ -1,0 +1,12 @@
+
+[window]
+
+opacity = 0.9
+decorations = "buttonless"
+
+[keyboard]
+bindings = [{ key = "N", mods = "Control|Shift", action = "CreateNewWindow" }]
+
+[cursor]
+style.shape = "Beam"
+style.blinking = "On"
