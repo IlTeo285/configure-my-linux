@@ -86,3 +86,11 @@
     url: https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/plugins/kubectl/kubectl.plugin.zsh
     dest: "$HOME/.my-custom-zsh/kubectl.plugin.zsh"
     mode: "0644"
+
+- name: customize neovim
+
+  ansible.builtin.git:
+    repo: https://github.com/IlTeo285/nvim.git
+    dest: "$HOME/.config/nvim"
+    single_branch: yes
+    depth: 1
