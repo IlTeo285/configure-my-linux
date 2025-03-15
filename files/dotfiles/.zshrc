@@ -14,7 +14,7 @@ bindkey '^X^X' history-beginning-search-menu
 bindkey "^@" fzf-file-widget
 
 # The following lines were added by compinstall
-zstyle :compinstall filename '/home/matteo/.zshrc'
+zstyle :compinstall filename '$HOME/.zshrc'
 autoload -Uz compinit history-beginning-search-menu
 compinit
 # End of lines added by compinstall
@@ -22,10 +22,10 @@ zstyle ':completion:*' menu yes select
 zle -N history-beginning-search-menu
 
 # Plugins
-source ~/.zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /usr/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-source ~/.zsh/zsh-you-should-use/you-should-use.plugin.zsh
-source ~/.zsh/zsh-bat/zsh-bat.plugin.zsh
+source ~/.my-custom-zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
+source /.my-custom-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.my-custom-zsh/zsh-you-should-use/you-should-use.plugin.zsh
+source ~/.my-custom-zsh/zsh-bat/zsh-bat.plugin.zsh
 
 # 1Password
 export SSH_AUTH_SOCK=~/.1password/agent.sock
