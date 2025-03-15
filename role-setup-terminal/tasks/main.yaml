@@ -46,6 +46,20 @@
     single_branch: yes
     depth: 1
 
+- name: install zsh-bat
+  ansible.builtin.git:
+    repo: https://github.com/fdellwing/zsh-bat.git
+    dest: "$HOME/.my-custom-zsh/zsh-bat"
+    single_branch: yes
+    depth: 1
+
+- name: install zsh-you-should-use
+  ansible.builtin.git:
+    repo: https://github.com/MichaelAquilina/zsh-you-should-use.git
+    dest: "$HOME/.my-custom-zsh/zsh-you-should-use"
+    single_branch: yes
+    depth: 1
+
 - name: install - zsh-autosuggestions
   ansible.builtin.git:
     repo: https://github.com/zsh-users/zsh-autosuggestions.git

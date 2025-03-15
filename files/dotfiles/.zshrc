@@ -23,7 +23,7 @@ zle -N history-beginning-search-menu
 
 # Plugins
 source ~/.my-custom-zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
-source /.my-custom-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+source ~/.my-custom-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 source ~/.my-custom-zsh/zsh-you-should-use/you-should-use.plugin.zsh
 source ~/.my-custom-zsh/zsh-bat/zsh-bat.plugin.zsh
 
