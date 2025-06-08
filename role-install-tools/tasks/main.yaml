@@ -34,3 +34,4 @@
   ansible.builtin.shell:
     cmd: cargo binstall -y exa
     creates: ~/.cargo/bin/exa
+    executable: /bin/zsh

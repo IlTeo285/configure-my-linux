@@ -21,6 +21,8 @@ compinit
 zstyle ':completion:*' menu yes select
 zle -N history-beginning-search-menu
 
+export PATH="$HOME/.local/bin:$PATH"
+
 # Plugins
 source ~/.my-custom-zsh/zsh-autosuggestions/zsh-autosuggestions.zsh
 source ~/.my-custom-zsh/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh

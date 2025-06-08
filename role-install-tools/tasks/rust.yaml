@@ -30,6 +30,6 @@
 
 - name: Install cargo-binstall
   ansible.builtin.shell:
-    cmd: cargo install cargo-binstall
+    cmd: ~/.cargo/bin/cargo install cargo-binstall
     creates: ~/.cargo/bin/cargo-binstall
 
