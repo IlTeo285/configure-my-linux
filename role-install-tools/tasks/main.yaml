@@ -4,12 +4,33 @@
     path: "$HOME/.local/bin"
     state: directory
 
+- name: install packages
+  become: yes
+  ansible.builtin.package:
+    state: latest
+    name:
+      - bat
+      - git
+      - golang
+      - htop
+      - make
+      - openssl
+      - snapd
+      - tree
+      - neovim
+      - zsh
+
 # print the operational system
 - debug:
     msg: "os: {{ ansible_distribution }}/{{ ansible_distribution_major_version }}"
 
 # install the tools based on operational system
-- ansible.builtin.include_tasks: "{{ ansible_distribution  | lower }}.yaml"
+#- ansible.builtin.include_tasks: "{{ ansible_distribution  | lower }}.yaml"
 
   # install the tools based on operational system
 - ansible.builtin.include_tasks: "rust.yaml"
+
+- name: Install exa using cargo-binstall
+  ansible.builtin.shell:
+    cmd: cargo binstall -y exa
+    creates: ~/.cargo/bin/exa
