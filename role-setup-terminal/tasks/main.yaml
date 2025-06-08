@@ -4,6 +4,13 @@
     path: "$HOME/.local/bin"
     state: directory
 
+- name: Add ~/.local/bin to PATH in .zshrc
+  ansible.builtin.lineinfile:
+    path: "$HOME/.zshrc"
+    line: 'export PATH="$HOME/.local/bin:$PATH"'
+    state: present
+    insertafter: EOF
+
 - name: create directory parent of the starship configuration file
   ansible.builtin.file:
     path: "$HOME/.config"
