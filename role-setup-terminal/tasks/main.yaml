@@ -27,7 +27,14 @@
     dest: "$HOME/.zshrc"
     mode: u+rw,g-r,o-r
 
+- name: Add ~/.local/bin to PATH in .zshrc
+  ansible.builtin.lineinfile:
+    path: "$HOME/.zshrc"
+    line: 'export PATH="$HOME/.local/bin:$PATH"'
+    state: present
+    insertafter: EOF
 - name: customize starship
+
   ansible.builtin.copy:
     src: dotfiles/starship.toml
     dest: "$HOME/.config/starship.toml"
@@ -94,3 +101,4 @@
     dest: "$HOME/.config/nvim"
     single_branch: yes
     depth: 1
+
