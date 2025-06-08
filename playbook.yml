@@ -1,5 +1,5 @@
 ---
-- name: Configure My Fedora
+- name: Configure My Linux
   gather_facts: true
   hosts: localhost
   connection: local

@@ -1,4 +1,9 @@
 ---
+- name: create user wide binary path directory 
+  ansible.builtin.file:
+    path: "$HOME/.cargo"
+    state: directory
+
 - name: Install dependencies (curl, build tools)
   become: yes
   ansible.builtin.package:
@@ -15,11 +20,16 @@
 
 - name: Add Rust to PATH
   ansible.builtin.lineinfile:
-    path: ~/.zshrc
+    path: ~/.bashrc
     line: 'export PATH="$HOME/.cargo/bin:$PATH"'
     create: yes
 
 - name: Reload shell environment
   ansible.builtin.shell:
-    cmd: source ~/.bashrc
+    cmd: . ~/.bashrc
+
+- name: Install cargo-binstall
+  ansible.builtin.shell:
+    cmd: ~/.cargo/bin/cargo install cargo-binstall
+    creates: ~/.cargo/bin/cargo-binstall
 
